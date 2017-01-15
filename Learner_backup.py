@@ -2,11 +2,14 @@ __author__ = 'philippe'
 import World
 import threading
 import time
-import random
 
 discount = 0.3
 actions = World.actions
 states = []
+
+#stuff I really need to care about
+#World.x and World.Y are the dimentions fo the grid
+#Q and states are what I would imagine them to be
 
 Q = {}
 
@@ -22,8 +25,6 @@ for state in states:
         temp[action] = 0.1
         World.set_cell_score(state, action, temp[action])
     Q[state] = temp
-print Q
-exit()
 
 for (i, j, c, w) in World.specials:
     for action in actions:
